@@ -4,6 +4,8 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import "@/styles/main.scss";
 
+export const dynamic = "force-dynamic";
+
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 const lora = Lora({ subsets: ["latin"], display: "swap" });
 
