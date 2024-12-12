@@ -1,0 +1,13 @@
+.postContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+  width: 100%;
+  max-width: 1202px;
+  min-height: 400px;
+  padding: 0 16px;
+  margin: 0 auto;
+  transition: .5s;
+}

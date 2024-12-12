@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+:root {
+  --text-color: #4d4f54;
+  --background-color: #f1f2f4;
+  --title-color: #060811;
+  --card-color: #ffffff;
+  --button-color: #2f55b7;
+  --button-hover: #23418e;
+  --border-color: #dcdcdb;
+  --tag-color: #eaeef8;
+  --header-color: #f1f2f4;
+}
+
+.dark-mode {
+  --text-color: #9B9CA0;
+  --background-color: #060811;
+  --title-color: #ffffff;
+  --card-color: #16171B;
+  --button-color: #2F55B7;
+  --button-hover: #23418e;
+  --border-color: #16171B;
+  --tag-color: #060811;
+  --header-color: #16171B;
+}
+
+.dark-mode .logo {
+  filter: brightness(30) grayscale(5);
+}
+
+.container {
+  width: 100%;
+  max-width: 1202px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.notion.notion-page-content {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 !important;
+  padding-bottom: 40px;
+}
+
+.notion-page {
+  width: 100% !important;
+  max-width: 980px !important;
+  margin: 0 !important;
+}
+
+.notion-title {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}

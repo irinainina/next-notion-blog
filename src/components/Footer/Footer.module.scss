@@ -1,0 +1,37 @@
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1202px;
+  padding: 130px 16px 40px;
+  margin: 0 auto;
+
+  @media (max-width: 376px) {
+    padding-top: 100px;
+  }
+}
+
+.logo {
+  width: 91px;
+  height: 24px;
+  background-image: url("/svg/logo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  @media (max-width: 376px) {
+    width: 82px;
+    height: 21px;
+  }
+}
+
+.footerInfo {
+  font-size: 16px;
+}
+
+.github {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--title-color);
+}

@@ -1,0 +1,36 @@
+.title {
+  max-width: 1050px;
+  margin: 0 auto 24px;
+  padding: 0;
+  padding-top: 64px;
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: -0.03em;
+  color: var(--title-color);
+
+  @media (max-width: 768px) {
+    font-size: 60px;
+  }
+
+  @media (max-width: 540px) {
+    font-size: 52px;
+  }
+
+  @media (max-width: 376px) {
+    padding-top: 48px;
+    font-size: 40px;
+  }
+}
+
+.subtitle {
+  max-width: 590px;
+  padding: 0;
+  margin: 0 auto 58px;
+  text-align: center;
+
+  @media (max-width: 376px) {
+    font-size: 16px;
+  }
+}
