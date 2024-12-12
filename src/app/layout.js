@@ -1,4 +1,5 @@
 import { Inter, Lora } from "next/font/google";
+import { cookies } from "next/headers";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import "@/styles/main.scss";
@@ -12,9 +13,15 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const cookieStore = cookies();
+  const theme = cookieStore.get("theme")?.value || "light";
+  
   return (
-    <html lang="en" className={`${inter.className} ${lora.className} font-sans`}>
-      <body className={inter.className}>
+    <html
+      lang="en"
+      className={`${inter.className} ${lora.className} font-sans`}
+    >
+      <body className={`${inter.className} ${theme === "dark" ? "dark-mode" : ""}`}>
         <Header />
         {children}
         <Footer />
