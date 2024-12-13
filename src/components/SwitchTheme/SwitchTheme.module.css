@@ -1,0 +1,13 @@
+.switchTheme {
+  background: var(--button-color);
+  color: var(--card-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background: var(--button-hover);
+  }
+}

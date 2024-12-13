@@ -43,7 +43,8 @@ export async function fetchContent(postId) {
   return html;
 }
 
-const PostPage = async ({ params }) => {
+export default async function PostPage(props) {
+  const params = await props.params;
   const post = await fetchPost(params.id);
   if (!post) {
     return notFound();
@@ -59,5 +60,3 @@ const PostPage = async ({ params }) => {
     </main>
   );
 };
-
-export default PostPage;
