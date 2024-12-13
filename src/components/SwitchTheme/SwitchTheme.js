@@ -1,21 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { setTheme } from "../../utils/theme";
-import styles from "./ThemeButton.module.css";
+import { setTheme } from "@/utils/setTheme";
+import styles from "./SwitchTheme.module.css";
 
-const ThemeButton = () => {
+const SwitchTheme = ({ theme }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  useEffect(() => {   
-    const theme = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("theme="))
-      ?.split("=")[1];
-
+  useEffect(() => {
     if (theme === "dark") {
       document.body.classList.add("dark-mode");
       setIsDarkMode(true);
+    } else {
+      setTheme("light");
     }
   }, []);
 
@@ -35,7 +32,7 @@ const ThemeButton = () => {
 
   return (
     <button
-      className={styles.themeButton}
+      className={styles.switchTheme}
       onClick={toggleTheme}
       aria-label="Toggle theme"
     >
@@ -44,4 +41,4 @@ const ThemeButton = () => {
   );
 };
 
-export default ThemeButton;
+export default SwitchTheme;

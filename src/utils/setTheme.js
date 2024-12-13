@@ -7,6 +7,6 @@ export async function setTheme(theme) {
     throw new Error("Invalid theme");
   }
 
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   cookieStore.set("theme", theme, { maxAge: 365 * 24 * 60 * 60 });
 }

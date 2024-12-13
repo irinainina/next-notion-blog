@@ -1,8 +1,8 @@
 import Link from "next/link";
-import ThemeButton from "../ThemeButton/ThemeButton";
+import SwitchTheme from "../SwitchTheme/SwitchTheme";
 import styles from "./Header.module.scss";
 
-const Header = () => {
+const Header = ({ theme }) => {
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
@@ -12,7 +12,7 @@ const Header = () => {
         >
           <h1 className={`${styles.logo} logo`}></h1>
         </Link>
-        <ThemeButton />
+        <SwitchTheme theme={theme} />
       </div>
     </header>
   );
