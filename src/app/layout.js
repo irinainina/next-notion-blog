@@ -1,6 +1,7 @@
 import { Inter, Lora } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { cookies } from "next/headers";
+import Script from "next/script";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import CookiesBanner from "@/components/CookiesBanner/CookiesBanner";
@@ -22,10 +23,25 @@ export default async function RootLayout({ children }) {
   const userConsent = cookieStore.get("userConsent")?.value === "analytics:true";
 
   return (
-    <html
-      lang="en"
-      className={`${inter.className} ${lora.className} font-sans`}
-    >
+    <html lang="en" className={`${inter.className} ${lora.className} font-sans`}>
+      <head>
+        <Script
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function (c, s, q, u, a, r, e) {
+                  c.hj=c.hj||function(){(c.hj.q=c.hj.q||[]).push(arguments)};
+                  c._hjSettings = { hjid: a };
+                  r = s.getElementsByTagName('head')[0];
+                  e = s.createElement('script');
+                  e.async = true;
+                  e.src = q + c._hjSettings.hjid + u;
+                  r.appendChild(e);
+              })(window, document, 'https://static.hj.contentsquare.net/c/csq-', '.js', 5301740);
+            `,
+          }}
+        />
+      </head>
       <body className={`${inter.className} ${theme === "dark" ? "dark-mode" : ""}`}>
         <Header theme={theme} />
         {children}
